@@ -17,7 +17,6 @@ void setup()
   Serial.begin(115200);    // Setting the baud rate of Serial Monitor (Arduino)
   Serial.println ("SIM900A Ready");
   delay(100);
-  Serial.println ("Type s to send message or r to receive message");
 }
 
 
