@@ -1,6 +1,7 @@
 #include <SoftwareSerial.h>
 
 SoftwareSerial SIM900A(10,11);
+//Initialize pins
 int fishSwitchState = HIGH;
 int fishSwitchPin = 9;
 int previous = LOW;
@@ -15,7 +16,6 @@ void setup()
   pinMode(fishSwitchPin, INPUT);
   SIM900A.begin(115200);   // Setting the baud rate of GSM Module  
   Serial.begin(115200);    // Setting the baud rate of Serial Monitor (Arduino)
-  Serial.println ("SIM900A Ready");
   delay(100);
 }
 
@@ -30,12 +30,9 @@ void loop()
     time = millis();
     if (smsSent == false)
     {
-      Serial.println("Sending sms");
       SendMessage();
       smsSent = true;
     }
-   
-      
   }
   previous = fishSwitchState;
 
